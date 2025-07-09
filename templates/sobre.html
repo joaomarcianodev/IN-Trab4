@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Dados - Sobre Nós</title>
+    <link rel="icon" type="image/x-icon" href="imgs/comida-saudavel.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Recomendação de Alimentos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="analise.html">Análise do Knime</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="card"> 
+                    <div class="card-header bg-dark text-white">
+                        <h1 class="h4 mb-0">Sobre o Projeto</h1>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Este projeto de Recomendação de Alimentos foi desenvolvido como uma iniciativa para explorar e aplicar técnicas de análise de dados e aprendizado de máquina. O objetivo principal é agrupar alimentos com base em suas informações nutricionais, permitindo a identificação de grupos alimentares similares e a geração de insights valiosos para dietas e planos alimentares.</p>
+                        
+                        <p class="card-text">Utilizamos a plataforma KNIME para o pré-processamento, modelagem e análise dos dados. Foram testados diversos algoritmos de clusterização para encontrar a melhor estrutura de agrupamento para a base de dados selecionada.</p>
+                        
+                        <div class="text-center">
+                            <a href="analise.html" class="btn btn-primary">Ver Análise Completa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="imgs/profile.jpg" alt="Foto do Desenvolvedor" class="img-fluid rounded-circle w-50 mb-3">
+                        <h5 class="card-title">João Augusto Marciano Silva</h5>
+                        <p class="card-subtitle mb-2 text-muted">Estudante de Análise e Desenvolvimento de Sistemas | Desenvolvedor do Projeto</p>
+                        
+                        <hr>
+                        <div class="d-flex justify-content-center">
+                            <a href="https://github.com/JoaoAugusto2020" class="btn btn-outline-dark mx-2" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://www.linkedin.com/in/joao-augusto-marciano-silva/" class="btn btn-outline-primary mx-2" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="mailto:joao.silva@estudante.iftm.edu.br" class="btn btn-outline-danger mx-2" target="_blank"><i class="fa fa-envelope"></i> Gmail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</body>
+</html>
