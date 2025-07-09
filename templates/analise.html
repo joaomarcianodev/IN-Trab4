@@ -1,196 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Análise de Dados - Recomendação de Alimentos</title>
-		<link rel="icon" type="image/x-icon" href="imgs/comida-saudavel.png">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Previsão de Distúrbio do Sono</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename= 'imgs/noite.png') }}" type="image/x-icon">
 
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-		<link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Recomendação de Alimentos</a>
+            <a class="navbar-brand" href="/">Classificação do Sono</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="analise.html">Análise do Knime</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/analise">Análise do Knime</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/sobre">Sobre</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-	<div class="container mt-5 mb-5">
+	<div class="main-container mt-2 mb-2">
 		<div class="card">
 			<div class="card-header bg-dark text-white">
 				<h1 class="h4 mb-0">Download da Base de Dados</h1>
 			</div>
 			<div class="card-body">
-				<p class="card-text">Fonte da Base de Dados: <a href="https://www.kaggle.com/datasets/niharika41298/nutrition-details-for-most-common-foods/code" target="_blank">Kaggle</a></p>
+				<p class="card-text">Fonte da Base de Dados: <a href="https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset" target="_blank">Kaggle</a></p>
 
-				<p class="card-text">Clique no botão abaixo para fazer o download do arquivo de dados utilizado na análise.</p>
+				<p class="card-text">Clique no botão abaixo para fazer o download do arquivo PMML utilizado na análise.</p>
 				<div class="mt-4">
-					<a href="base-de-dados/nutrients_csvfile [tratado].xlsx" class="btn btn-primary" download>Download do Arquivo de Dados</a>
+					<a href="knime/sleep-health.pmml" class="btn btn-primary" download>Download do PMML</a>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="container mt-5 mb-5">
+	<div class="main-container mt-2 mb-2">
 		<div class="card h-100">
 			<div class="card-header bg-dark text-white">
 				<h1 class="h4 mb-0">Diagrama Knime</h1>
 			</div>
 			<div class="card-body">
-				<img src="imgs/knime.svg" alt="knime-workflow" class="w-100">
-			</div>
-		</div>
-	</div>
-
-	<div class="container mt-5 mb-5">
-		<div class="card">
-			<div class="card-header bg-dark text-white">
-				<h1 class="h4 mb-0">Coeficiente de Silhuetas</h1>
-			</div>
-			<div class="card-body">
-				<p class="card-text">
-					<strong>Legenda</strong>:
-					<ul>
-						<li>Negativo: CS(i) abaixo de 0</li>
-						<li>Zero: CS(i) igual a 0</li>
-					</ul>
-				</p>
-				
+				<img src="/static/imgs/knime-workflow-diagram.svg" alt="knime-workflow" class="w-100">
+				<p class="card-text">Colunas filtradas pelo Correlation Filter:</p>
 				<div class="mt-4">
-					<div class="table-responsive">
-						<table class="table table-bordered table-striped text-center">
-							<thead class="table-secondary">
-								<tr>
-									<th rowspan="2" class="align-middle">Algoritmo</th>
-									<th colspan="9">Clusters</th>
-								</tr>
-								<tr>
-									<th>2</th>
-									<th>3</th>
-									<th>4</th>
-									<th>5</th>
-									<th>6</th>
-									<th>7</th>
-									<th>8</th>
-									<th>9</th>
-									<th>10</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row" class="text-start">k-Means</th>
-									<td>negativo</td>
-									<td class="table-success"><strong>0.371</strong></td>
-									<td>negativo</td>
-									<td>negativo</td>
-									<td>negativo</td>
-									<td>0.346</td>
-									<td>negativo</td>
-									<td>negativo</td>
-									<td>0.303</td>
-								</tr>
-								<tr>
-									<th scope="row" class="text-start">Fuzzy</th>
-									<td>negativo</td>
-									<td>negativo</td>
-									<td>0.366</td>
-									<td>0.372</td>
-									<td>negativo</td>
-									<td class="table-warning"><strong>0.396</strong></td>
-									<td>0.385</td>
-									<td>0.371</td>
-									<td>0.333</td>
-								</tr>
-								<tr>
-									<th scope="row" class="text-start">k-Medoids</th>
-									<td>negativo</td>
-									<td>negativo</td>
-									<td>negativo</td>
-									<td>0.249</td>
-									<td>0.248</td>
-									<td>0.282</td>
-									<td>negativo</td>
-									<td class="table-warning"><strong>0.320</strong></td>
-									<td>0.319</td>
-								</tr>
-								<tr>
-									<th scope="row" class="text-start">Hierárquico (Manhattan)</th>
-									<td class="table-danger"><strong>0.722</strong></td>
-									<td>zero</td>
-									<td>zero</td>
-									<td>zero</td>
-									<td>zero</td>
-									<td>zero</td>
-									<td>zero</td>
-									<td>zero</td>
-									<td>zero</td>
-								</tr>
-								<tr>
-									<th scope="row" class="text-start">Hierárquico (Euclidean)</th>
-									<td>zero</td>
-									<td>zero</td>
-									<td>zero</td>
-									<td>zero</td>
-									<td>zero</td>
-									<td>zero</td>
-									<td>zero</td>
-									<td>zero</td>
-									<td>zero</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+					<ol>
+						<li>Age</li>
+						<li>Sleep Duration</li>
+						<li>Physical Activity Level</li>
+						<li>Gender (to number)</li>
+						<li>Occupation (to number)</li>
+						<li>BMI Category (to number)</li>
+						<li>Sleep Disorder <strong>TARGET</strong></li>
+						<li>Quality of Sleep <strong>REMOVIDO PELO CORRELATION FILTER</strong></li>
+						<li>Stress Level <strong>REMOVIDO PELO CORRELATION FILTER</strong></li>
+					</ol>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="container mt-5 mb-5">
+	<div class="main-container mt-2 mb-2">
 		<div class="card">
 			<div class="card-header bg-dark text-white">
-				<h1 class="h4 mb-0">Gráficos</h1>
+				<h1 class="h4 mb-0">Análise do Scorer de cada Algoritmo</h1>
 			</div>
 			<div class="card-body">
 				<div class="row">
 					<div class="col-md-6 mb-4">
-						<img src="imgs/graficos/k-Means (3 Clusters).png" alt="Gráfico 1" class="img-fluid">
-						<p class="text-center">k-Means (3 Clusters)</p>
+						<img src="/static/imgs/Scores/Scorer - Random Forest Learner.svg" alt="Score 1" class="img-fluid">
+						<p class="text-center">Random Forest Learner</p>
 					</div>
 					<div class="col-md-6 mb-4">
-						<img src="imgs/graficos/Fuzzy (7 Clusters).png" alt="Gráfico 2" class="img-fluid">
-						<p class="text-center">Fuzzy (7 Clusters)</p>
+						<img src="/static/imgs/Scores/Scorer - Decision Tree Learner.svg" alt="Score 2" class="img-fluid">
+						<p class="text-center">Decision Tree Learner</p>
 					</div>
 					<div class="col-md-6 mb-4">
-						<img src="imgs/graficos/k-Medoids (9 Clusters).png" alt="Gráfico 3" class="img-fluid">
-						<p class="text-center">k-Medoids (9 Clusters)</p>
+						<img src="/static/imgs/Scores/Scorer - PNN Learner (DDA).svg" alt="Score 3" class="img-fluid">
+						<p class="text-center">PNN Learner (DDA)</p>
 					</div>
 					<div class="col-md-6 mb-4">
-						<img src="imgs/graficos/Hierárquico-Manhattan (2 Clusters).png" alt="Gráfico 4" class="img-fluid">
-						<p class="text-center">Hierárquico-Manhattan (2 Clusters)</p>
+						<img src="/static/imgs/Scores/Scorer - K Nearest Neighbor.svg" alt="Score 4" class="img-fluid">
+						<p class="text-center">K Nearest Neighbor</p>
+					</div>
+					<div class="col-md-6 mb-4">
+						<img src="/static/imgs/Scores/Scorer - SVM Learner.svg" alt="Score 5" class="img-fluid">
+						<p class="text-center">SVM Learner</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="container mt-5 mb-5">
+	<div class="main-container mt-2 mb-2">
 		<div class="card">
 			<div class="card-header bg-success text-white">
 				<h1 class="h4 mb-0">Conclusão</h1>
 			</div>
 			<div class="card-body">
-				<p class="card-text">Considerando as <strong>Silhuetas</strong> e os <strong>Gráficos</strong> do melhor resultado de todos os algoritmos, chega-se à conclusão de que o melhor algoritmo a ser usado é o <strong>k-Means com 3 clusters</strong> pois este possui uma silhueta com valor minimamente bom e um gráfico com cluster bem formados.</p>
+				<p class="card-text">Considerando a <strong>Acurácia</strong> de todos os algoritmos, chega-se à conclusão de que o melhor algoritmo de classificação a ser usado sistemas de recomendação por meio de aprendizado supervisionado é o <strong>Random Forest Learner</strong> pois este possui a maior acurácia, logo também, maior taxa de acertos nas previsões.</p>
 			</div>
 		</div>
 	</div>
