@@ -32,19 +32,19 @@ Sistemas de recomendação por meio de aprendizado supervisionado utilizando alg
 | **SVM Learner** | 85,8% | 0,75% |
 
 ## Respectivos Scores
-Random Forest Learner:
+Random Forest Learner:\
 ![Imagem - Scorer do Random Forest Learner](https://github.com/joaomarcianodev/IN-Trab4/blob/main/static/imgs/Scores/Scorer%20-%20Random%20Forest%20Learner.svg "Random Forest Learner")
 
-Decision Tree Learner:
+Decision Tree Learner:\
 ![Imagem - Scorer do Decision Tree Learner](https://github.com/joaomarcianodev/IN-Trab4/blob/main/static/imgs/Scores/Scorer%20-%20Decision%20Tree%20Learner.svg "Decision Tree Learner")
 
-PNN Learner (DDA):
+PNN Learner (DDA):\
 ![Imagem - Scorer do PNN Learner (DDA)](https://github.com/joaomarcianodev/IN-Trab4/blob/main/static/imgs/Scores/Scorer%20-%20PNN%20Learner%20(DDA).svg "PNN Learner (DDA)")
 
-K Nearest Neighbor:
+K Nearest Neighbor:\
 ![Imagem - Scorer do K Nearest Neighbor](https://github.com/joaomarcianodev/IN-Trab4/blob/main/static/imgs/Scores/Scorer%20-%20K%20Nearest%20Neighbor.svg "K Nearest Neighbor")
 
-SVM Learner:
+SVM Learner:\
 ![Imagem - Scorer do SVM Learner](https://github.com/joaomarcianodev/IN-Trab4/blob/main/static/imgs/Scores/Scorer%20-%20SVM%20Learner.svg "SVM Learner")
 
 ## Resultado
