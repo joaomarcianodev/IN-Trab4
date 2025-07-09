@@ -37,24 +37,24 @@
             <form action="{{ url_for('predict') }}" method="post" class="text-start">
                 <div class="mb-3">
                     <label for="idade" class="form-label fw-bold">Idade (anos)</label>
-                    <input type="number" class="form-control" id="idade" name="idade" placeholder="Valor entre 27 e 59" required min="27" max="59" step="1" value="28"/>
+                    <input type="number" class="form-control" id="idade" name="idade" placeholder="Valor entre 27 e 59" required min="27" max="59" step="1" />
                 </div>
 
                 <div class="mb-3">
                     <label for="tempoSono" class="form-label fw-bold">Duração do Sono (horas)</label>
-                    <input type="time" class="form-control" id="tempoSono" name="tempoSono" placeholder="Valor entre 5.8 e 8.5" required min="05:48" max="08:30"  value="05:48"/>
+                    <input type="time" class="form-control" id="tempoSono" name="tempoSono" placeholder="Valor entre 5.8 e 8.5" required min="05:48" max="08:30" />
                 </div>
 
                 <div class="mb-3">
                     <label for="minutosAtividade" class="form-label fw-bold">Atividade Física (min/dia)</label>
-                    <input type="number" class="form-control" id="minutosAtividade" name="minutosAtividade" placeholder="Valor entre 30 e 90" required min="30" max="90" step="1" value="30"/>
+                    <input type="number" class="form-control" id="minutosAtividade" name="minutosAtividade" placeholder="Valor entre 30 e 90" required min="30" max="90" step="1" />
                 </div>
 
                 <div class="mb-3">
                     <label for="genero" class="form-label fw-bold">Gênero</label>
                     <select class="form-select" id="genero" name="genero" required>
-                        <option disabled >Selecione uma opção</option>
-                        <option value="0" selected>Masculino</option>
+                        <option disabled selected>Selecione uma opção</option>
+                        <option value="0">Masculino</option>
                         <option value="1">Feminino</option>
                     </select>
                 </div>
@@ -62,8 +62,8 @@
                 <div class="mb-3">
                     <label for="profissao" class="form-label fw-bold">Ocupação</label>
                     <select class="form-select" id="profissao" name="profissao" required>
-                        <option disabled >Selecione uma opção</option>
-                        <option value="0" selected>Engenheiro(a) de Software</option>
+                        <option disabled selected>Selecione uma opção</option>
+                        <option value="0">Engenheiro(a) de Software</option>
                         <option value="1">Médico(a)</option>
                         <option value="2">Vendedor(a)</option>
                         <option value="3">Professor(a)</option>
@@ -79,10 +79,10 @@
                 <div class="mb-3">
                     <label for="peso" class="form-label fw-bold">Categoria de IMC</label>
                     <select class="form-select" id="peso" name="peso" required>
-                        <option disabled >Selecione uma opção</option>
+                        <option disabled selected>Selecione uma opção</option>
                         <option value="1">Normal</option>
                         <option value="0">Sobrepeso</option>
-                        <option value="2" selected>Obeso</option>
+                        <option value="2">Obeso</option>
                     </select>
                 </div>
 
